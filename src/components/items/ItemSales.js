@@ -1,17 +1,13 @@
-import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react"
 
-import ItemSales from '../components/items/ItemSales.js'
+export default function ItemSales(props) {
 
-export default function Item() {
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
-    let { id } = useParams()
-
     useEffect(() => {
-        fetch(`http://localhost:7500/items/${id}`)
+        fetch(`http://localhost:7500/sales/?itemName=${props.itemName}`)
             .then((response) => {
                 if (response.ok) {
                     return response.json()
@@ -30,15 +26,27 @@ export default function Item() {
                 setLoading(false)
             })
     }, [])
-
     if (loading) return ""
     if (error) return "Error!"
 
     return (
         <>
-            <h1>Display Item</h1>
-            <h1>{data.name}</h1>
-            <ItemSales itemName={data.name} />
+            <h1>Item Sales History</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quantity Sold</th>
+                        <th>Price per Item</th>
+                    </tr >
+                </thead >
+                <tbody>
+                    {data.map(({ id, soldQty, salePrice, itemName }) => (
+                        <tr key={id}>
+                            <td>{soldQty}</td><td>{salePrice}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </>
     )
 }
