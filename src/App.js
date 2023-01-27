@@ -13,6 +13,7 @@ import './App.css';
 export default function App() {
   return (
     <>
+      <Navbar />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -20,7 +21,6 @@ export default function App() {
           <Route path="items" element={<Items />} />
           <Route path="sales" element={<Sales />} />
         </Routes>
-        <Navbar />
       </div>
     </ >
   );
