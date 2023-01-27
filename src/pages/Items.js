@@ -31,7 +31,7 @@ export default function Items() {
 
     return (
         <>
-            <h1>Sales</h1>
+            <h1>Items</h1>
             <table>
                 <thead>
                     <tr>
