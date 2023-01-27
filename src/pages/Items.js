@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from "react"
 
 export default function Items() {
@@ -32,6 +33,7 @@ export default function Items() {
     return (
         <>
             <h1>Items</h1>
+            <Link to="/add-item">Add Item</Link>
             <table>
                 <thead>
                     <tr>
