@@ -30,6 +30,9 @@ export default function Sales() {
     if (loading) return ""
     if (error) return "Error!"
 
+    const pricePerItem = (soldQty, salePrice) => {
+        return salePrice/soldQty
+    }
     return (
         <>
             <h1>Sales</h1>
@@ -40,6 +43,7 @@ export default function Sales() {
                         <th>Quanty Sold</th>
                         <th>Item Name</th>
                         <th>Total Sale Price</th>
+                        <th>Price per Item</th>
                     </tr >
                 </thead >
                 <tbody>
@@ -48,6 +52,7 @@ export default function Sales() {
                             <td>{soldQty}</td>
                             <td>{itemName}</td>
                             <td>{salePrice}</td>
+                            <td>{pricePerItem(soldQty,salePrice)}</td>
                         </tr>
                     ))}
                 </tbody>
