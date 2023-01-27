@@ -1,11 +1,19 @@
+import { Route, Routes } from "react-router-dom"
+
+import Home from './pages/Home.js'
+import PageNotFound from './pages/PageNotFound.js'
+
 import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-
-    </div>
+    <>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
+    </ >
   );
 }
-
-export default App;
