@@ -22,61 +22,61 @@
       "id": 1,
       "itemName": "root",
       "soldQty": 20,
-      "saleTotal": 50
+      "salePrice": 50
     },
     {
       "id": 2,
       "itemName": "rock",
       "soldQty": 100,
-      "saleTotal": 45
+      "salePrice": 45
     },
     {
       "id": 3,
       "itemName": "lumber",
       "soldQty": 4,
-      "saleTotal": 15
+      "salePrice": 15
     },
     {
       "id": 4,
       "itemName": "rock",
       "soldQty": 1200,
-      "saleTotal": 150
+      "salePrice": 150
     },
     {
       "id": 5,
       "itemName": "root",
       "soldQty": 48,
-      "saleTotal": 12
+      "salePrice": 12
     },
     {
       "id": 6,
       "itemName": "gem",
       "soldQty": 11,
-      "saleTotal": 2800
+      "salePrice": 2800
     },
     {
       "id": 7,
       "itemName": "root",
       "soldQty": 500,
-      "saleTotal": 136
+      "salePrice": 136
     },
     {
       "id": 8,
       "itemName": "gem",
       "soldQty": 10,
-      "saleTotal": 2500
+      "salePrice": 2500
     },
     {
       "id": 9,
       "itemName": "lumber",
       "soldQty": 800,
-      "saleTotal": 24
+      "salePrice": 24
     },
     {
       "id": 10,
       "itemName": "rock",
       "soldQty": 10,
-      "saleTotal": 150
+      "salePrice": 150
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from 'react-router-dom'
 
 export default function Sales() {
     const [data, setData] = useState(null)
@@ -29,27 +30,28 @@ export default function Sales() {
     if (loading) return ""
     if (error) return "Error!"
 
-    return (   
+    return (
         <>
-        <h1>Sales</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Quanty</th>
-                    <th>Item</th>
-                    <th>Total</th>
-                </tr >
-            </thead >
-            <tbody>
-            {data.map(({id, soldQty, itemName, saleTotal}) => (
-                <tr key={id}>
-                    <td>{soldQty}</td>
-                    <td>{itemName}</td>
-                    <td>{saleTotal}</td>
-                </tr>
-            ))}
-           </tbody>
-        </table>
+            <h1>Sales</h1>
+            <Link to="/add-sale">Add Sale</Link>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Quanty Sold</th>
+                        <th>Item Name</th>
+                        <th>Total Sale Price</th>
+                    </tr >
+                </thead >
+                <tbody>
+                    {data.map(({ id, soldQty, itemName, salePrice }) => (
+                        <tr key={id}>
+                            <td>{soldQty}</td>
+                            <td>{itemName}</td>
+                            <td>{salePrice}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </>
     )
 }
