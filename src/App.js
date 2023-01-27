@@ -6,6 +6,7 @@ import Home from './pages/Home.js'
 import PageNotFound from './pages/PageNotFound.js'
 
 import Items from './pages/Items.js'
+import Item from './pages/Item.js'
 import AddItem from './pages/AddItem'
 import Sales from './pages/Sales.js'
 import AddSale from './pages/AddSale.js'
@@ -21,6 +22,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="items" element={<Items />} />
+          <Route path="/item/:id" element={<Item />} />
           <Route path="add-item" element={<AddItem />} />
           <Route path="sales" element={<Sales />} />
           <Route path="add-sale" element={<AddSale />} />

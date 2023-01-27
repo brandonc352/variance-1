@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useEffect, useState } from "react"
 
 export default function Item() {
@@ -6,8 +6,10 @@ export default function Item() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
 
+    let { id } = useParams()
+
     useEffect(() => {
-        fetch("http://localhost:7500/items")
+        fetch(`http://localhost:7500/items/${id}`)
             .then((response) => {
                 if (response.ok) {
                     return response.json()
@@ -32,22 +34,8 @@ export default function Item() {
 
     return (
         <>
-            <h1>Items</h1>
-            <Link to="/add-item">Add Item</Link>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                    </tr >
-                </thead >
-                <tbody>
-                    {data.map(({ id, name }) => (
-                        <tr key={id}>
-                            <td><Link to={{ pathname: `/item/${id}` }}>{name}</Link></td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+            <h1>Display Item</h1>
+            <h1>{data.name}</h1>
         </>
     )
 }
