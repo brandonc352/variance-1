@@ -10,7 +10,7 @@ const SingleItem = () => {
     const { name } = item;
 
     let { id } = useParams();
-    const personName = "Brandon"
+
     useEffect(() => {
         getSingleItem(id).then((data) => setItem(data));
     }, [id]);
