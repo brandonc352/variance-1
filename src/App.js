@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom"
 
 import Navbar from './components/Navbar/Navbar'
+import Home from './components/pages/HomePage/Home.js'
+import PageNotFound from './components/pages/PageNotFound/index.js'
 
-import Home from './pages/Home.js'
-import PageNotFound from './pages/PageNotFound.js'
+import AddItem from './components/pages/AddItem/index.js'
+import AllItems from './components/pages/AllItems/index.js'
+import SingleItem from './components/pages/SingleItem/index.js'
 
-import Items from './pages/Items.js'
-import Item from './pages/Item.js'
-import AddItem from './pages/AddItem'
-import Sales from './pages/Sales.js'
-import AddSale from './pages/AddSale.js'
+import AddSale from './components/pages/AddSale/index.js'
+import AllSales from './components/pages/AllSales/index.js'
 
 import './App.css';
 
@@ -21,10 +21,11 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<PageNotFound />} />
-          <Route path="items" element={<Items />} />
-          <Route path="/item/:id" element={<Item />} />
           <Route path="add-item" element={<AddItem />} />
-          <Route path="sales" element={<Sales />} />
+          <Route path="items" element={<AllItems />} />
+          <Route path="/item/:id" element={<SingleItem />} />
+          <Route path="add-item" element={<AddItem />} />
+          <Route path="sales" element={<AllSales />} />
           <Route path="add-sale" element={<AddSale />} />
         </Routes>
       </div>
