@@ -7,7 +7,7 @@ const AddSale = () => {
     const navigate = useNavigate();
 
     const [sale, setSale] = useState({ itemId: 0, itemName: "", soldQty: 0, salePrice: 0 });
-    const { itemId, itemName, soldQty, salePrice } = sale;
+    const { itemId, soldQty, salePrice } = sale;
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -23,6 +23,13 @@ const AddSale = () => {
         navigate("/sales");
     };
 
+    const parentStates = (name) => {
+        setSale({
+            ...sale,
+            itemName: name,
+        });
+    }
+    
     return (
         <>
             <h1>Add Sale</h1>
@@ -40,7 +47,7 @@ const AddSale = () => {
                 <br />
                 <label htmlFor="title">Title</label>
                 <br />
-                <AutoCompleteItemName />
+                <AutoCompleteItemName stateAccess={parentStates} />
                 <br />
                 <label htmlFor="sold-qty">Sold Quantity</label>
                 <br />
