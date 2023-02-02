@@ -1,0 +1,18 @@
+div#auto-item-name {
+  position: relative;
+  z-index: 1;
+}
+div#item-names {
+  background: white;
+  border: 1px solid lightgrey;
+  margin-top: -2px;
+  z-index: -1;
+  position: absolute;
+}
+div#item-names > div:hover {
+  background: lightgrey;
+}
+
+div#item-names > div {
+  padding: 6px 10px;
+}

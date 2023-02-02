@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { getAllItems } from "../../../../controllers/items";
+import './styles.css'
 
 const AutoCompleteItemName = ({ stateAccess }) => {
     const [display, setDisplay] = useState(false)
@@ -17,7 +18,7 @@ const AutoCompleteItemName = ({ stateAccess }) => {
             window.removeEventListener("mousedown", handleClickOutside);
         };
     });
-    
+
     const handleClickOutside = event => {
         const { current: wrap } = wrapperRef;
         if (wrap && !wrap.contains(event.target)) {
@@ -45,11 +46,12 @@ const AutoCompleteItemName = ({ stateAccess }) => {
 
     return (
         <>
-            <div ref={wrapperRef}>
+            <div id="auto-item-name" ref={wrapperRef}>
                 <input
                     id="item-name"
                     name="itemName"
                     type="text"
+                    autoComplete="off"
                     value={search}
                     onChange={(e) => {
                         setSearch(e.target.value);
