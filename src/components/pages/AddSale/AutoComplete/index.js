@@ -10,6 +10,16 @@ const AutoCompleteItemName = () => {
         getAllItems().then((data) => setOptions(data));
     }, []);
 
+    const result = () => {
+        const filteredResults = options.filter(element => element.name.toLowerCase().indexOf(search.toLowerCase()) !== -1);
+        if (filteredResults.length === 0) {
+            return []
+        }
+        else {
+            return filteredResults
+        }
+    }
+
     return (
         <>
             <div >
@@ -27,7 +37,7 @@ const AutoCompleteItemName = () => {
                 />
                 <div id="item-names" >
                     {display && (<>
-                        {options.map((value, id) => {
+                        {result().map((value, id) => {
                             return (
                                 <div
                                     key={id}
