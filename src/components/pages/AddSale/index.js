@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addSale } from "../../../controllers/sales";
+import AutoCompleteItemName from "./AutoComplete";
 
 const AddSale = () => {
     const navigate = useNavigate();
@@ -25,6 +26,7 @@ const AddSale = () => {
     return (
         <>
             <h1>Add Sale</h1>
+            <label htmlFor="id">ID</label>
             <form onSubmit={handleSubmit}>
                 <input
                     id="id"
@@ -38,15 +40,7 @@ const AddSale = () => {
                 <br />
                 <label htmlFor="title">Title</label>
                 <br />
-                <input
-                    id="title"
-                    name="itemName"
-                    type="text"
-                    value={itemName}
-                    onChange={(e) => {
-                        handleChange(e);
-                    }}
-                />
+                <AutoCompleteItemName />
                 <br />
                 <label htmlFor="sold-qty">Sold Quantity</label>
                 <br />
